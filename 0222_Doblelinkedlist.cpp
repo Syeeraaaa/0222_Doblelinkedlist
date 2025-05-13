@@ -30,8 +30,17 @@ void addNode(){
         //kondisi jika start tidak kosong dan noMhs node baru sama dengan noMhs
         if (START != NULL && newNode ->noMhs == START->noMhs)
         {
-            /* code */
+            cout << "\033[31mDuplicate roll numbers not allowe\033[0m" << endl;
+            return;
         }
+        // jika list kosong, maka node text nya adalah START
+        newNode->next = START;
+        // kondisi jika start tidak memiliki nilai atau tidak kosong 
+        if (START != NULL)
+        {
+            START->prev = newNode;
+        }
+        
         
     }
     
