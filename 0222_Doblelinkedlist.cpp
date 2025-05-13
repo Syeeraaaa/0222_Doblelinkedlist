@@ -12,3 +12,8 @@ struct Node
 };
 
 Node*START = NULL;
+
+// deklarasi prosedur addnode 
+void addNode(){
+    
+}
