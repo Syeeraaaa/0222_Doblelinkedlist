@@ -38,9 +38,18 @@ void addNode(){
         // kondisi jika start tidak memiliki nilai atau tidak kosong 
         if (START != NULL)
         {
-            START->prev = newNode;
+            START->prev = newNode; 
         }
+        newNode->prev = NULL;
+        START = newNode;
         
+    }
+    //kondisi jika semua kondisi if tidak terpenuhi
+    else
+    {
+
+        Node *current = START;
+        Node *previous = NULL;
         
     }
     
