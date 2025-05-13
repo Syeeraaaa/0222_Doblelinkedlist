@@ -172,7 +172,7 @@ void revtraverse()
         while (currentNode->next != NULL)
 
             currentNode = currentNode->next;
-        
+
         while (currentNode != NULL)
         {
             cout << currentNode->noMhs << "" << currentNode->name << endl;
@@ -194,11 +194,34 @@ void searchData()
     cin >> num;
     if (search(num, &prev, &curr) == false)
         cout << "\nRecord not found" << endl;
-        else
+    else
+    {
+        cout << "\nRecod found " << endl;
+        cout << "\nRoll number: " << curr->noMhs << endl;
+        cout << "\nName: " << curr->name << endl;
+    }
+}
+
+int main()
+{
+    while (true)
+    {
+        try
         {
-            cout << "\nRecod found "<< endl;
-            cout << "\nRoll number: "<<curr->noMhs<< endl;
-            cout << "\nName: "<< curr->name << endl;
+            cout << endl
+             << "menu";
+        cout << endl
+             << "1. Menambah data kedalam list" << endl;
+        cout << "2. Menghapus data dari dalam list" << endl;
+        cout << "3. Menampilkan semua data dalam ururtan roll number" << endl;
+        cout << "4. Menampilkan semua data dalam ururtan roll number yang menurun" << endl;
+        cout << "5. Mencari data dalam list" << endl;
+        cout << "6. Keluar" << endl;
+        cout << endl
+             << "\nMasukkan pilihan (1-6): ";
+             char ch;
+        cin >> ch;
         }
+    }
     
 }
