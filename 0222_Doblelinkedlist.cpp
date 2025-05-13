@@ -77,7 +77,7 @@ void addNode()
     }
 };
 
-bool search(int rollNo, Node ** previous, Node **current)
+bool search(int rollNo, Node **previous, Node **current)
 {
     *previous = NULL;
     *current = START;
@@ -89,7 +89,8 @@ bool search(int rollNo, Node ** previous, Node **current)
     return (*current != NULL);
 }
 
-void deleteNode(){
+void deleteNode()
+{
     Node *previous, *current;
     int rollNo;
 
@@ -115,31 +116,67 @@ void deleteNode(){
         cout << "\033[31mThe record with roll number" << rollNo << "not found/033[0m" << endl;
         return;
     }
-    
+
     if (current = START)
     {
-        START = START-> next;
+        START = START->next;
         if (START != NULL)
         {
             START->prev = NULL;
         }
-        
     }
-     else
-     {
+    else
+    {
         previous->next = current->next;
         if (current->next != NULL)
         {
             current->next->prev = previous;
-        } 
-     }
+        }
+    }
 
-     delete current;
-     cout << "\x1b[32mRecod with roll numbr "<< rollNo << "delete\x1b[0m" << endl;  
+    delete current;
+    cout << "\x1b[32mRecod with roll numbr " << rollNo << "delete\x1b[0m" << endl;
 }
 
-// method untuk mengecek apakah list kosng 
+// method untuk mengecek apakah list kosng
 bool ListEmpty()
 {
     return (START == NULL);
+}
+
+// prosedur traverse untuk menampilkan data secara urut
+void traverse()
+{
+    if (ListEmpty())
+        cout << "\nList is empty\n";
+    else
+    {
+        cout << "\nRecored in ascending order of roll number are: " << endl;
+        Node *currentNode = START;
+        while (currentNode != NULL)
+        {
+            cout << currentNode->noMhs << "" << currentNode->name << endl;
+            currentNode = currentNode->prev;
+        }
+    }
+}
+
+void revtraverse()
+{
+    if (ListEmpty())
+        cout << "\nList is empty\n";
+    else
+    {
+        cout << "\nRecored in ascending order of roll number are: " << endl;
+        Node *currentNode = START;
+        while (currentNode->next != NULL)
+        
+            currentNode = currentNode->next;
+        
+        while (currentNode != NULL)
+        {
+            cout << currentNode->noMhs << "" << currentNode->name << endl;
+            currentNode = currentNode->prev;
+        }
+    }
 }
