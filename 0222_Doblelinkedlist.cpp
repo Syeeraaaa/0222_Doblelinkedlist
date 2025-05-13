@@ -15,5 +15,5 @@ Node*START = NULL;
 
 // deklarasi prosedur addnode 
 void addNode(){
-    
+    Node *newNode = new Node();
 }
