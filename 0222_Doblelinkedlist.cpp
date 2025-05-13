@@ -164,13 +164,13 @@ void traverse()
 void revtraverse()
 {
     if (ListEmpty())
-        cout << "\nList is empty\n";
+        cout << "\nList is empty" << endl;
     else
     {
         cout << "\nRecored in ascending order of roll number are: " << endl;
         Node *currentNode = START;
         while (currentNode->next != NULL)
-        
+
             currentNode = currentNode->next;
         
         while (currentNode != NULL)
@@ -179,4 +179,13 @@ void revtraverse()
             currentNode = currentNode->prev;
         }
     }
+}
+
+void searchData()
+{
+    if (ListEmpty() == true)
+    {
+        /* code */
+    }
+    
 }
